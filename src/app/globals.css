@@ -1,31 +1,39 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #20c997;
+  --color-primary: #00E5A0;
   --color-secondary: #1aa179;
   --color-bgsec: #f3f8f7;
+  --color-admin: #023C2D;
   --font-lato: var(--font-lato);
+  --breakpoint-lg: 1200px;
+  --breakpoint-md: 1000px;
 }
+/* sm	40rem (640px)	*/
+/* md	48rem (1000px) */
+/* lg	64rem (1200px) */
+/* xl	80rem (1280px) */
+/* 2xl	96rem (1536px) */
 
 .clip-bottom-triangle {
   clip-path: polygon(100% 100%, 0% 100%, 100% 0);
 }
 
-  .clip-top-triangle {
-    clip-path: polygon(50% 50%, 0 0, 100% 0);
-  }
+.clip-top-triangle {
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
+}
 
-  .clip-top-left-triangle {
-    clip-path: polygon(100% 0, 0 0, 0 100%);
-  }
+.clip-top-left-triangle {
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+}
 
-  .clip-top-triangle-au {
-    clip-path: polygon(100% 0, 0 0, 50% 80%);
-  }
+.clip-top-triangle-au {
+  clip-path: polygon(100% 0, 0 0, 50% 80%);
+}
 
-  .clip-path-wave {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  }
+.clip-path-wave {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
 
 @keyframes breathing-float {
   0%,
@@ -39,4 +47,13 @@
 
 .animate-breathing-float {
   animation: breathing-float 5s ease-in-out infinite;
+}
+
+@keyframes fadeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.fade-blink {
+  animation: fadeBlink 3s ease-in-out infinite;
 }

@@ -1,4 +1,3 @@
-// import ContactForm from "../../Layout/ContactForm";
 import ContactForm from "@/components/Layouts/ContactForm";
 import Header from "@/components/Layouts/Header";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
@@ -25,7 +24,7 @@ const ContactUs = () => {
             <h3 className="font-bold text-xl">CV Mandiri Kerja Abadi</h3>
           </div>
           <div className="flex items-start gap-3 text-sm">
-            <FaMapMarkerAlt className="mt-2.5 size-5" />
+            <FaMapMarkerAlt className="mt-2.5 size-4 flex-shrink-0" />
             <span>
               Jl. Raya Jabon No. 6, Jabonotoyo, Jabon, Kec. Mojoanyar, Kabupaten
               Mojokerto - Jawa Timur 61364 - Indonesia

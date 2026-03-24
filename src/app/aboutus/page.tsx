@@ -1,20 +1,22 @@
-import Header from "@/components/Layouts/Header/Header";
-import Button from "../../components/Elements/Button";
+import Header from "@/components/Layouts/Header";
+import { Button } from "@/components/Elements/Button";
+import Link from "next/link";
 import Image from "next/image";
 import TeamCard from "@/components/Fragments/TeamCard";
 
 const AboutUs = () => {
   return (
     <div className="font-lato w-full flex flex-col min-h-screen">
-      <Header title="About Us" bgImage="/assets/Building.svg" />
+      <Header title="About Us" />
 
       <section className="relative py-23">
+        {/* Background */}
         <div className="absolute top-0 left-0 w-full h-full bg-bgsec clip-top-triangle-au z-10"></div>
 
-        <div className="relative container mx-auto px-25 flex flex-col md:flex-row items-center gap-5 z-20">
+        <div className="relative w-8/10 md:w-7/10 mx-auto flex flex-col md:flex-row items-center gap-8 z-20">
           {/* Text Content */}
-          <div className="md:w-1/2 pl-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-5 text-black">
+          <div className="w-full md:w-1/2 px-4 sm:px-6 md:px-0 md:pl-20">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-5 text-black">
               Our History
             </h2>
             <p className="text-black mb-4">
@@ -40,28 +42,28 @@ const AboutUs = () => {
           </div>
 
           {/* Image */}
-          <div className="md:w-1/2 relative">
+          <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
             <Image
-              src="/assets/Building.svg"
+              src="/assets/Building.webp"
               alt="Building CV MKA"
               width={400}
               height={250}
-              className="w-[45%] mx-auto rounded transform rotate-[-3deg] shadow-lg object-cover h-50"
+              className="w-[70%] sm:w-[60%] md:w-[80%] lg:w-[45%] rounded transform rotate-[-3deg] shadow-lg object-cover"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-25">
+      <section className="bg-white py-20">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-6">
           {/* Left Image */}
           <div className="w-full md:w-1/2 flex justify-center">
             <Image
-              src="/assets/Building.svg"
+              src="/assets/gadget.png"
               alt=""
               width={320}
               height={240}
-              className="w-[80%] max-w-md rounded transform shadow-lg object-cover"
+              className="w-[80%] max-w-md rounded transform object-cover"
             />
           </div>
 
@@ -80,7 +82,9 @@ const AboutUs = () => {
               closely with you to understand your requirements and provide the
               best solutions.
             </p>
-            <Button to="/productservice">Find out more</Button>
+            <Button asChild>
+              <Link href="/productservice">Find out more</Link>
+            </Button>
           </div>
         </div>
       </section>

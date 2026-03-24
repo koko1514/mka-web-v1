@@ -1,11 +1,13 @@
-import Button from "@/components/Elements/Button";
-import Hero from "@/components/Layouts/Hero/Hero";
-import Statistic from "@/components/Layouts/Statistic/Statistic";
+import { Button } from "@/components/Elements/Button";
+import Link from "next/link";
+import Hero from "@/components/Layouts/Hero";
+import Statistic from "@/components/Layouts/Statistic";
 import Image from "next/image";
 import HomeCard from "@/components/Fragments/HomeCard";
 import Partner from "@/components/Fragments/Partner";
+import { ArrowRight } from "lucide-react";
 
-const Home = () =>{
+const Home = () => {
   return (
     <div className="font-lato w-full flex flex-col min-h-screen">
       <Hero />
@@ -14,13 +16,11 @@ const Home = () =>{
         <div className="absolute top-0 left-0 w-full h-full bg-bgsec clip-top-triangle z-10"></div>
 
         {/* Konten */}
-        <div className="relative max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-10 items-center z-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-20">
           {/* Teks */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Reliable and durable <br />
-              bodywork that exceeds <br />
-              customer expectations
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 leading-snug">
+              Reliable and durable bodywork that exceeds customer expectations
             </h2>
             <p className="text-black leading-relaxed">
               At our coachbuilding facility, we take pride in delivering
@@ -33,10 +33,10 @@ const Home = () =>{
 
           <div className="relative w-fit mx-auto">
             <Image
-              src="/assets/truk1.svg" // ganti dengan path gambar kamu
+              src="/assets/truk1.png" // ganti dengan path gambar kamu
               alt="Truck"
-              width={500}
-              height={300}
+              width={350}
+              height={100}
               className="w-full max-w-md shadow-xl"
             />
             {/* Optional: Efek tumpukan */}
@@ -63,20 +63,22 @@ const Home = () =>{
               closely with you to understand your requirements and provide the
               best solutions.
             </p>
-            <Button to="/aboutus">Learn More</Button>
+            <Button asChild>
+              <Link href="/aboutus">Learn More</Link>
+            </Button>
           </div>
 
-          <div className="md:w-1/2 relative flex justify-center items-center">
+          <div className="w-full md:w-1/2 relative flex justify-center items-center">
             {/* Circle Background */}
-            <div className="absolute w-110 h-110 ml-30 bg-bgsec rounded-full z-0"></div>
+            <div className="absolute bg-bgsec rounded-full z-0 w-85 h-85 mt-25 md:mt-0 md:w-96 md:h-96 lg:w-110 lg:h-110 md:ml-30"></div>
 
             {/* Image */}
             <Image
-              src="/assets/laptop.png" // ganti dengan path gambar kamu
+              src="/assets/gadget.png"
               alt="Technology Devices"
-              width={500}
-              height={300}
-              className="w-[70%] relative ml-30 object-contain"
+              width={800}
+              height={600}
+              className="relative object-contain w-110 h-70 mt-25 md:mt-0 scale-110 md:scale-125 lg:scale-150 md:ml-30 "
             />
           </div>
         </div>
@@ -91,17 +93,17 @@ const Home = () =>{
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             <HomeCard
-              image="/assets/card1.svg"
+              image="/assets/manekin.png"
               title="Uncompromising Build Quality"
               description="Ideal for manufacturers. Essential features to streamline production and distribution. Perfect for small teams."
             />
             <HomeCard
-              image="/assets/card2.svg"
+              image="/assets/stamp.png"
               title="Tailored Solutions for Every Industry"
               description="Innovative solutions for manufacturing excellence. Streamline your production and enhance efficiency across."
             />
             <HomeCard
-              image="/assets/card3.svg"
+              image="/assets/trucktank.png"
               title="End-to-End Manufacturing Expertise"
               description="Comprehensive solutions for manufacturers. State-of-the-art technology and dedicated support for optimal output."
             />
@@ -109,7 +111,7 @@ const Home = () =>{
         </div>
       </section>
 
-      <section className=" relative py-16 pb-25">
+      <section className="relative py-16 pb-25">
         <div className="absolute top-0 left-0 w-full h-50 bg-bgsec clip-top-left-triangle z-0"></div>
 
         <div className="relative max-w-6xl mx-auto px-4 text-center z-10">
@@ -125,21 +127,13 @@ const Home = () =>{
             className="text-primary font-medium hover:underline inline-flex items-center mb-10"
           >
             Explore our success stories
-            <svg
-              className="ml-2 w-4 h-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M12.293 3.293a1 1 0 011.414 0L18 7.586a1 1 0 010 1.414l-4.293 4.293a1 1 0 01-1.414-1.414L14.586 9H4a1 1 0 110-2h10.586l-2.293-2.293a1 1 0 010-1.414z" />
-            </svg>
+            <ArrowRight className="ml-2 w-4 h-4" />
           </a>
           <Partner />
         </div>
       </section>
-
-      {/* <Footer /> */}
     </div>
   );
-}
+};
 
 export default Home;

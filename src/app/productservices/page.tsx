@@ -2,7 +2,6 @@ import ProductCard from "@/components/Fragments/ProductCard";
 import Header from "@/components/Layouts/Header";
 import LatestProduct from "@/components/Layouts/LatestProduct";
 import Testimonial from "@/components/Layouts/Testimonial";
-// import Testimonial from "../../Layout/Testimonial";
 
 const ProductServices = () => {
   return (
